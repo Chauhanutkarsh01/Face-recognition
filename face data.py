@@ -56,4 +56,5 @@ cv2.destroyAllWindows()
 
 face_data = np.asarray(face_data)
 np.save(os.path.join(dataset_path, name + '.npy'), face_data)
-print(f"\n✅ Data saved successfully as {name}.npy with shape {face_data.shape}")
+print(f"\n Data saved successfully as {name}.npy with shape {face_data.shape}")
+
