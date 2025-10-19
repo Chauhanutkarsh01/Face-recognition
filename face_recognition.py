@@ -25,7 +25,7 @@ class_id = 0
 names = {}
 
 if not os.path.exists(dataset_path):
-    print("❌ Dataset folder not found. Run face_data_collect.py first.")
+    print(" Dataset folder not found. Run face_data_collect.py first.")
     exit()
 
 for fx in os.listdir(dataset_path):
@@ -38,15 +38,15 @@ for fx in os.listdir(dataset_path):
         labels.append(target)
 
 if len(face_data) == 0:
-    print("❌ No .npy files found in face_data/. Please collect data first.")
+    print(" No .npy files found in face_data/. Please collect data first.")
     exit()
 
 face_dataset = np.concatenate(face_data, axis=0)
 face_labels = np.concatenate(labels, axis=0).reshape((-1, 1))
 trainset = np.concatenate((face_dataset.reshape(face_dataset.shape[0], -1), face_labels), axis=1)
 
-print("✅ Training data loaded with shape:", trainset.shape)
-print("📁 Classes:", names)
+print(" Training data loaded with shape:", trainset.shape)
+print(" Classes:", names)
 
 cap = cv2.VideoCapture(0)
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
@@ -77,3 +77,4 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
+
