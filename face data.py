@@ -11,10 +11,10 @@ face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_fronta
 
 name = input("Enter your name: ").strip().lower()
 if not name:
-    print("❌ Name cannot be empty!")
+    print(" Name cannot be empty!")
     exit()
 
-print(f"\n🎬 Collecting data for '{name}'. Press 'q' to stop early.\n")
+print(f"\n Collecting data for '{name}'. Press 'q' to stop early.\n")
 
 cap = cv2.VideoCapture(0)
 
@@ -57,4 +57,5 @@ cv2.destroyAllWindows()
 face_data = np.asarray(face_data)
 np.save(os.path.join(dataset_path, name + '.npy'), face_data)
 print(f"\n Data saved successfully as {name}.npy with shape {face_data.shape}")
+
 
